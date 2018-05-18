@@ -51,7 +51,7 @@ Commands:
 - localhost:1433
 
 ### Dashboard
-<img style="width:100%;" src="/doc/images/screenshot1.png">
+<img style="width:70%;" src="/doc/images/screenshot-1.png">
 
 ### Catologo de Productos
-<img style="width:100%;" src="/doc/images/screenshot1.png">
+<img style="width:70%;" src="/doc/images/screenshot-2.png">
