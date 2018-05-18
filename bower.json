@@ -1,0 +1,14 @@
+{
+    "name": "sigesu",
+    "private": true,
+    "dependencies": {
+      "bootstrap": "4.1.0",
+      "bootstrap-daterangepicker": "3.0.0",
+      "jquery": "3.3.1",
+      "jquery-validation": "1.17.0",
+      "jquery-validation-unobtrusive": "3.2.9",
+      "chartjs": "2.7.2",
+      "momentjs":"2.22.1"
+    }
+  }
+  

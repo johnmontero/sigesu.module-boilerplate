@@ -1,0 +1,20 @@
+version: "2"
+services:
+    web:
+        build: .
+        ports:
+            - "8000:80"
+        depends_on:
+            - db
+        volumes:
+            - ./:/app
+        environment:
+            - ASPNETCORE_ENVIRONMENT = Development
+
+    db:
+        image: "microsoft/mssql-server-linux:2017-latest"
+        environment:
+            SA_PASSWORD: "Gm}nYMq9q+"
+            ACCEPT_EULA: "Y"
+        ports:
+            - "1433:1433"

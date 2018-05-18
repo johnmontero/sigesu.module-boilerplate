@@ -1,0 +1,25 @@
+@model app.Models.Product
+
+@Html.Partial("~/Views/Shared/_TitlePartial.cshtml",
+ new ViewDataDictionary(ViewData){{ "Title", "Eliminar Producto"}})
+
+<h3>¿Estás seguro que quieres eliminar este Producto?</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Retornar", "Index")
+        </div>
+    }
+</div>

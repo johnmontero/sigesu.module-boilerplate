@@ -1,0 +1,17 @@
+@model app.Models.Product
+
+@Html.Partial("~/Views/Shared/_TitlePartial.cshtml",
+ new ViewDataDictionary(ViewData){{ "Title", "Producto"}})
+
+<div class="card">
+  <h5 class="card-header">Nuevo</h5>
+  <div class="card-body">
+    @using (Html.BeginForm()) {
+        Html.RenderPartial("_FormPartial.cshtml", Model);
+    }
+  </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

@@ -1,0 +1,49 @@
+@model IEnumerable<app.Models.Product>
+
+@Html.Partial("~/Views/Shared/_TitlePartial.cshtml", 
+new ViewDataDictionary(ViewData){{ "Title", "Productos"}})
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-3 mb-3">
+    <div class="btn-toolbar mb-2 mb-md-0">
+        @using (Html.BeginForm())
+        {
+            @Html.TextBox("SearchString", "",new { @class="form-control form-control-sm", @style="text-transform:uppercase;", @onkeyup="javascript:this.value=this.value.toUpperCase();"}) 
+        } 
+    </div>
+    <div class="btn-toolbar mb-2 mb-md-0">
+        <button class="btn btn-sm btn-outline-primary">
+            @Html.ActionLink("Agregar Producto", "Create") 
+        </button>
+    </div>
+</div>
+
+<table class="table table-hover">
+    <thead >
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th scope="row">
+                @Html.DisplayFor(modelItem => item.Id)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Modificar", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+   </tbody>
+</table>
