@@ -50,6 +50,26 @@ Commands:
 
 - localhost:1433
 
+### Build cambios
+Luego de hacer un cambio debe hacer:
+
+```shell
+sigesu.module-boilerplate$ make stop target=web
+sigesu.module-boilerplate$ make ssh 
+root@99a2beab60c4:/app# dotnet build
+sigesu.module-boilerplate$ make start target=web
+```
+
+### Agregar Migraciones 
+Luego de hacer un cambio en las entidades del modelo, debe hacer:
+
+```shell
+sigesu.module-boilerplate$ make stop target=web
+sigesu.module-boilerplate$ make ssh 
+root@99a2beab60c4:/app# dotnet ef migrations add CreateTableProduct
+sigesu.module-boilerplate$ make start target=web
+```
+
 ### Dashboard
 <img style="width:70%;" src="/doc/images/screenshot-1.png">
 
